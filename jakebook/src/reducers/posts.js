@@ -1,14 +1,12 @@
 
+// eslint-disable-next-line
 export default (posts = [], action) => {
   switch (action.type) {
     case 'FETCH_ALL':
       return action.payload;
     case 'CREATE':
-      return posts;
+      return [...posts, action.payload];
     default:
       return posts;
   }
 }
-
-// ESLint is throwing an error, will run to see if it works regardless.
-// Update: App is running in browswer regardless of problem.

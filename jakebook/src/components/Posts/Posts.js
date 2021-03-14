@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 const Posts = () => {
   const posts = useSelector((state) => state.posts);
 
-  console.log(posts);
+  console.log(posts); // Keep this one for now.
 
   return (
     <>

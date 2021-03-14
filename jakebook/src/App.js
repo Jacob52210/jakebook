@@ -11,17 +11,17 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getPosts);
+    dispatch(getPosts());
   }, [dispatch]);
 
   return (
    <div className="app-container">
      <header>
-       <h1>Jakebook</h1>
+       <h1 className="app-name">Jakebook</h1>
      </header>
      <div className="content-container">
 
-        <div className="form-container">
+        <div>
           <Form />
         </div>
 

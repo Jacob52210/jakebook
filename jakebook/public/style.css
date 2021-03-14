@@ -10,4 +10,5 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgb(180, 255, 255);
 }
