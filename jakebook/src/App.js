@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import './style.css';
 
+import { getPosts } from './actions/posts';
 //import logo from './images/';
 import Posts from './components/Posts/Posts.js'
 import Form from './components/Form/Form.js'
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPosts);
+  }, [dispatch]);
+
   return (
    <div className="app-container">
      <header>
