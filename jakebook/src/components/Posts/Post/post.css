@@ -2,47 +2,58 @@
   width: 80%;
   margin: 1rem auto;
   box-shadow: 2px 2px 5px black;
+  background-color: white;
+  border-radius: 5px;
 }
 
 .post-header {
-  height: fit-content;
-  background-color: cyan;
-  margin: 0;
-}
-
-.creator-age {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items:baseline;
-  padding: 0;
-  padding-bottom: 1rem;
-  color: white;
-  text-shadow: 2px 2px 3px black;
+  align-items: center;
   display: flex;
 }
 
-.post-title {
-  margin: 0;
-  padding-bottom: 1rem;
+.creater-age {
+  text-align: left;
+  margin: 10px;
 }
 
 .post-creator {
-  margin: 5px;
-}
-
-.post-age{
-  margin: 5px;
-}
-
-.post-body {
   margin: 0;
-  background-color: white;
+  font-size: 1.5rem;
+}
+
+.post-age {
+  margin: 0;
+  color: gray;
+}
+
+hr {
+  margin: 0;
+  width: 90%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.post-title {
+  font-size: 2rem;
 }
 
 .post-message {
   margin: 0;
+  margin-bottom: 2rem;
+}
+
+.tags {
+  font-size: 1rem;
+  color: gray;
+  font-weight: lighter;
 }
 
 .btns {
+  margin: 0;
   display: flex;
   justify-content: space-between;
   background-color: none;
@@ -50,8 +61,9 @@
 }
 
 .more-btn {
-  margin-right: 10px;
+  margin-right: 20px;
   color: black;
+  cursor: pointer;
 }
 
 .thumbs-up {
