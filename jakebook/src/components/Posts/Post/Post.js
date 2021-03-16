@@ -8,7 +8,7 @@ import './post.css';
 
 
 
-const Post = ({ post }) => {
+const Post = ({ post, setCurrentId }) => {
   return (
     <div className="post-container">
 
@@ -17,12 +17,12 @@ const Post = ({ post }) => {
           <h1 className="post-creator">{post.creator}</h1>
           <h1 className="post-age" >{moment(post.createdAt).fromNow()}</h1>
         </div>
-        <FontAwesomeIcon icon={faEllipsisV} className="more-btn" onClick={() => {}}/>
+        <FontAwesomeIcon icon={faEllipsisV} className="more-btn" onClick={() => setCurrentId(post._id)}/>
       </div>
       <hr />
       <h1 className="post-title">{post.title}</h1>
       <h1 className="post-message" >"{post.message}"</h1>
-      <h3 className="tags" >{post.tags.split(",").map((tag) => `#${tag} `)}</h3>
+      <h3 className="tags" >{post.tags.trim() === "" ? "No Tags" : post.tags.split("," || " ").map((tag) => `#${tag} `)}</h3>
         
       <div className="btns">
         <div>

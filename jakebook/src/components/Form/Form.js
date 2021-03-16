@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { createPost } from '../../actions/posts'
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { createPost, updatePost } from '../../actions/posts'
 import './form.css';
 
-const Form = () => {
+const Form = ({ currentId, setCurrentId}) => {
   const [postData, setPostData] = useState({
     creator: '',
     title: '',
@@ -11,22 +11,39 @@ const Form = () => {
     tags: '',
     selectedFile: ''
   })
-
+  const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if(post) setPostData(post);
+  }, [post])
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(createPost(postData));
+    if(currentId) {
+      dispatch(updatePost(currentId, postData));
+    } else {
+      dispatch(createPost(postData));
+    }
+
+    clear();
   }
 
   const clear = () => {
-
+    setCurrentId(null);
+    setPostData({ 
+      creator: '',
+      title: '',
+      message: '',
+      tags: '',
+      selectedFile: ''
+     });
   }
 
   return (
     <div className="form-container">
-      <h1 className="form-label">Create New Post: </h1>
+      <h1 className="form-label">{currentId ? 'Editing' : 'Create New' } Post</h1>
       <form autoComplete="off" noValidate onSubmit={handleSubmit}>
         <input 
           type="text" 
@@ -73,8 +90,8 @@ const Form = () => {
           />
         </div>
         <div className="button-container">
-          <button className="submit-btn"type="submit">Submit</button>
-          <button className="clear-btn" onClick={clear}>Clear</button>
+          <button className="submit-btn" type="submit">Submit</button>
+          <button className="clear-btn"  type="reset" onClick={clear}>Clear</button>
         </div>
       </form>
     </div>
