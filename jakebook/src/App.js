@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
 import './style.css';
 
 import { getPosts } from './actions/posts';
@@ -18,6 +20,7 @@ const App = () => {
    <div className="app-container">
      <header>
        <h1 className="app-name">Jakebook</h1>
+       <FontAwesomeIcon className="app-icon" icon={faGlobeAmericas} />
      </header>
      <div className="content-container">
 

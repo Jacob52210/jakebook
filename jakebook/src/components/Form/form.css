@@ -1,4 +1,6 @@
 .form-container {
+  width: 80%;
+  margin: auto;
   border-radius: 5px;
   box-shadow: 2px 2px 5px black;
   padding: 1rem;
@@ -35,7 +37,7 @@ input {
   width: 100%;
 }
 
-button {
+.submit-btn {
   color: white;
   font-weight: bolder;
   width: 80%;
@@ -45,6 +47,11 @@ button {
 }
 
 .clear-btn {
+  color: white;
+  font-weight: bolder;
+  width: 80%;
+  padding: 8px;
+  border: none;
   background-color: red;
 }
 

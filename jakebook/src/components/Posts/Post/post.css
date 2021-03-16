@@ -1,0 +1,66 @@
+.post-container {
+  width: 80%;
+  margin: 1rem auto;
+  box-shadow: 2px 2px 5px black;
+}
+
+.post-header {
+  height: fit-content;
+  background-color: cyan;
+  margin: 0;
+}
+
+.creator-age {
+  justify-content: space-between;
+  align-items:baseline;
+  padding: 0;
+  padding-bottom: 1rem;
+  color: white;
+  text-shadow: 2px 2px 3px black;
+  display: flex;
+}
+
+.post-title {
+  margin: 0;
+  padding-bottom: 1rem;
+}
+
+.post-creator {
+  margin: 5px;
+}
+
+.post-age{
+  margin: 5px;
+}
+
+.post-body {
+  margin: 0;
+  background-color: white;
+}
+
+.post-message {
+  margin: 0;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  background-color: none;
+  padding: 1rem;
+}
+
+.more-btn {
+  margin-right: 10px;
+  color: black;
+}
+
+.thumbs-up {
+  color: blue;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.delete {
+  color: red;
+  cursor: pointer;
+}

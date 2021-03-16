@@ -33,6 +33,7 @@ const Form = () => {
           name="creator" 
           label="Creator"
           placeholder="Creator"
+          required
           value={postData.creator}
           onChange={(e) => setPostData({ ...postData, creator:e.target.value })} 
         />
@@ -42,6 +43,7 @@ const Form = () => {
           name="title" 
           label="Title"
           placeholder="Title"
+          required
           value={postData.title}
           onChange={(e) => setPostData({ ...postData, title:e.target.value })} 
         />
@@ -50,6 +52,7 @@ const Form = () => {
           name="message" 
           label="Message"
           placeholder="Message"
+          required
           value={postData.message}
           onChange={(e) => setPostData({ ...postData, message:e.target.value })} 
         />
@@ -57,7 +60,7 @@ const Form = () => {
           type="text" 
           name="tags" 
           label="Tags"
-          placeholder="Tags"
+          placeholder="Tags (seperate with comas)"
           value={postData.tags}
           onChange={(e) => setPostData({ ...postData, tags:e.target.value })} 
         />
@@ -70,7 +73,7 @@ const Form = () => {
           />
         </div>
         <div className="button-container">
-          <button type="submit">Submit</button>
+          <button className="submit-btn"type="submit">Submit</button>
           <button className="clear-btn" onClick={clear}>Clear</button>
         </div>
       </form>
@@ -79,3 +82,6 @@ const Form = () => {
 }
 
 export default Form;
+
+// Ok, so the image file doesn't seem to be uploading, but we are posting data to the database. 
+// The clear button isn't set up yet, but it's acting like a submit button.
