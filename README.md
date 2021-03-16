@@ -21,4 +21,5 @@ ___
 * I would like to create user register and log in.
 * I would like to create groups.
 * I would like to be able to add/follow friends.
+* I would like to sanitze user input with Regular Expressions.
 
