@@ -14,8 +14,6 @@ import './post.css';
 const Post = ({ post, setCurrentId }) => {
   const dispatch = useDispatch();
 
-
-
   const bgimg = {
     backgroundImage: `url( ${post.selectedFile} )`,
     backgroundPosition: 'center center',
@@ -32,9 +30,9 @@ const Post = ({ post, setCurrentId }) => {
         <FontAwesomeIcon icon={faEdit} className="edit-btn" onClick={() => setCurrentId(post._id)}/>
       </div>
       
-      <h1 className="post-title">{post.title}</h1>
-      <h1 className="post-message" >"{post.message}"</h1>
-      <h3 className="tags" >{post.tags.trim() === "" ? "No Tags" : post.tags.split(",").map((tag) => `#${tag} `)}</h3>
+      <h1 className="post-title">{post.title.trim() === "" ? "No Title" : post.title.trim()}</h1>
+      <h1 className="post-message" >"{post.message.trim() === "" ? "No Message" : post.message.trim()}"</h1>
+      <h3 className="tags" >{post.tags.trim() === "" ? "No Tags" : post.tags.split(",").map((tag) => tag.trim() === "" ? "" : ` #${tag.trim()}` )}</h3>
         
       <div className="btns">
         <div>
@@ -43,11 +41,12 @@ const Post = ({ post, setCurrentId }) => {
         </div>
         <FontAwesomeIcon icon={faTrashAlt} className="delete" onClick={() => dispatch(deletePost(post._id))} />
       </div>
-      
-
+    
     </div>
   );
 }
+
+// Like btn isn't updating immediatly. And remove console logs. It's logging twice with every submission.
 
 
 

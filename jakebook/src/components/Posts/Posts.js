@@ -5,8 +5,6 @@ import { useSelector } from 'react-redux';
 const Posts = ({ setCurrentId }) => {
   const posts = useSelector((state) => state.posts);
 
-  console.log(posts); // Keep this one for now.
-
   return (
 
     // If posts.length is 0 it would be "not zero ( !0 )". By default zero is truthy, so not zero is falsey.
