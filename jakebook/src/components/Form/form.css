@@ -1,5 +1,5 @@
 .form-container {
-  width: 80%;
+  width: 250px;
   margin: auto;
   border-radius: 5px;
   box-shadow: 2px 2px 5px black;
@@ -30,31 +30,32 @@ input {
   border: none;
 }
 
-
+.file-select-btn {
+  color: white;
+}
 
 .button-container {
-  margin-bottom: 1rem;
-  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  width: 75%;
 }
 
 .submit-btn {
-  color: white;
+  color: green;
   font-weight: bolder;
-  width: 80%;
-  padding: 8px;
+  font-size: 3rem;
   border: none;
-  background-color: rgb(30, 184, 30);
+  background: transparent;
 }
 
 .clear-btn {
-  color: white;
+  color: darkred;
   font-weight: bolder;
-  width: 80%;
-  padding: 8px;
+  font-size: 3rem;
   border: none;
-  background-color: red;
+  background: transparent;
 }
 
 button:hover {
-  background-color: black;
+  color: black;
 }

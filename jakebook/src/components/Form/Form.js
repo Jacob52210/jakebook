@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import FileBase from 'react-file-base64';
 import { useDispatch, useSelector } from 'react-redux';
 import { createPost, updatePost } from '../../actions/posts'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+//import { faImage } from '@fortawesome/free-solid-svg-icons';
+import { faBan } from '@fortawesome/free-solid-svg-icons';
 import './form.css';
 
 const Form = ({ currentId, setCurrentId}) => {
@@ -77,21 +82,22 @@ const Form = ({ currentId, setCurrentId}) => {
           type="text" 
           name="tags" 
           label="Tags"
-          placeholder="Tags (seperate with comas)"
+          placeholder="Tags (seperate with commas)"
           value={postData.tags}
           onChange={(e) => setPostData({ ...postData, tags:e.target.value })} 
         />
         <div>
-          <input 
+          <FileBase 
             className="file-select-btn"
             type="file"
             multiple={false}
-            onDone={({base64}) => setPostData({ ...postData, selectedFile: base64})} // Throwing error.
+            onDone={({base64}) => setPostData({ ...postData, selectedFile: base64})} 
           />
         </div>
         <div className="button-container">
-          <button className="submit-btn" type="submit">Submit</button>
-          <button className="clear-btn"  type="reset" onClick={clear}>Clear</button>
+          <button className="submit-btn" type="submit"><FontAwesomeIcon icon={faPlus} /></button>
+          
+          <button className="clear-btn"  type="reset" onClick={clear}><FontAwesomeIcon icon={faBan} /></button>
         </div>
       </form>
     </div>
@@ -99,6 +105,3 @@ const Form = ({ currentId, setCurrentId}) => {
 }
 
 export default Form;
-
-// Ok, so the image file doesn't seem to be uploading, but we are posting data to the database. 
-// The clear button isn't set up yet, but it's acting like a submit button.
