@@ -54,7 +54,8 @@ const Form = ({ currentId, setCurrentId}) => {
           type="text" 
           name="creator" 
           label="Creator"
-          placeholder="Creator"
+          placeholder="Creator (limit is 15 characters)"
+          maxLength="15"
           required
           value={postData.creator}
           onChange={(e) => setPostData({ ...postData, creator:e.target.value })} 

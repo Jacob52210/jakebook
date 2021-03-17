@@ -29,19 +29,19 @@ const Post = ({ post, setCurrentId }) => {
         </div>
         <FontAwesomeIcon icon={faEdit} className="edit-btn" onClick={() => setCurrentId(post._id)}/>
       </div>
-      
-      <h1 className="post-title">{post.title.trim() === "" ? "No Title" : post.title.trim()}</h1>
-      <h1 className="post-message" >"{post.message.trim() === "" ? "No Message" : post.message.trim()}"</h1>
-      <h3 className="tags" >{post.tags.trim() === "" ? "No Tags" : post.tags.split(",").map((tag) => tag.trim() === "" ? "" : ` #${tag.trim()}` )}</h3>
-        
-      <div className="btns">
-        <div>
-          <FontAwesomeIcon icon={faThumbsUp} className="thumbs-up" onClick={() => dispatch(likePost(post._id))}/>
-          {post.likeCount} Likes
+      <div className="post-body">
+        <h1 className="post-title">{post.title.trim() === "" ? "No Title" : post.title.trim()}</h1>
+        <h1 className="post-message" >"{post.message.trim() === "" ? "No Message" : post.message.trim()}"</h1>
+        <h3 className="tags" >{post.tags.trim() === "" ? "No Tags" : post.tags.split(",").map((tag) => tag.trim() === "" ? "" : ` #${tag.trim()}` )}</h3>
+          
+        <div className="btns">
+          <div>
+            <FontAwesomeIcon icon={faThumbsUp} className="thumbs-up" onClick={() => dispatch(likePost(post._id))}/>
+            {post.likeCount} Likes
+          </div>
+          <FontAwesomeIcon icon={faTrashAlt} className="delete" onClick={() => dispatch(deletePost(post._id))} />
         </div>
-        <FontAwesomeIcon icon={faTrashAlt} className="delete" onClick={() => dispatch(deletePost(post._id))} />
       </div>
-    
     </div>
   );
 }
