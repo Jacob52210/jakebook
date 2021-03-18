@@ -2,7 +2,7 @@
 *By: Jacob Flora*
 ## Description
 *This is my first full-stack application hosted online.*
-#### Hosted [HERE]( place-hosting-url-here "Jakebook").
+#### Hosted [HERE]( https://jakebook.netlify.app/ "Jakebook").
 ___
 ## User Stories
 1. *As a soldier, I want to be able to show my friends and family the places I visit, so that they don't feel left out.*
