@@ -45,8 +45,5 @@ const Post = ({ post, setCurrentId }) => {
   );
 }
 
-// Like btn isn't updating immediatly. And remove console logs. It's logging twice with every submission.
-
-
 
 export default Post;

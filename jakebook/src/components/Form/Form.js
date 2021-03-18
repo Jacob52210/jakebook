@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createPost, updatePost } from '../../actions/posts'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-//import { faImage } from '@fortawesome/free-solid-svg-icons';
 import { faBan } from '@fortawesome/free-solid-svg-icons';
 import './form.css';
 
@@ -14,7 +13,8 @@ const Form = ({ currentId, setCurrentId}) => {
     title: '',
     message: '',
     tags: '',
-    selectedFile: ''
+    selectedFile: '',
+    createdAt: new Date()
   })
   const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
   const dispatch = useDispatch();
@@ -42,7 +42,7 @@ const Form = ({ currentId, setCurrentId}) => {
       title: '',
       message: '',
       tags: '',
-      selectedFile: ''
+      selectedFile: '',
      });
   }
 
@@ -87,14 +87,17 @@ const Form = ({ currentId, setCurrentId}) => {
           value={postData.tags}
           onChange={(e) => setPostData({ ...postData, tags:e.target.value })} 
         />
-        <div>
+        
+        <label for="file">
           <FileBase 
             className="file-select-btn"
             type="file"
+            id="file"
+            accept="image/*"
             multiple={false}
             onDone={({base64}) => setPostData({ ...postData, selectedFile: base64})} 
           />
-        </div>
+        </label>
         <div className="button-container">
           <button className="submit-btn" type="submit"><FontAwesomeIcon icon={faPlus} /></button>
           
