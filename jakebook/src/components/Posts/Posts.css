@@ -2,3 +2,39 @@
   color: white;
   font-size: 3rem;
 }
+
+.posts-container {
+  width: 100vw;
+  margin: auto;
+  margin-bottom: 2rem;
+  display:grid;
+  grid-template-columns: 1fr;
+}
+
+.single-post {
+  margin: auto;
+}
+
+@media screen and (min-width: 600px) {
+  .posts-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .posts-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .posts-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .posts-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}

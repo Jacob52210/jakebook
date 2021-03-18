@@ -1,6 +1,7 @@
 .post-container {
   width: 250px;
-  margin: 1rem auto;
+  height: 500px;
+  margin-top: 2rem;
   box-shadow: 5px 5px 10px black;
   background-color: white;
   border-radius: 20px 20px 0 0;
@@ -13,14 +14,21 @@
   justify-content: space-between;
   align-items: flex-start;
   display: flex;
+  background-image: url(../../../images/bg-img.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
+  background-color: rgb(34, 34, 34);
   border-radius: 20px 20px 0 0;
-  background-color: rgb(71, 71, 71);
+ 
 }
 
 .post-body {
+  height: 60%;
   padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .creater-age {
@@ -35,6 +43,7 @@
 .post-creator {
   margin: 20px;
   font-size: 1.5rem;
+  font-family: serif;
   text-shadow: 2px 2px 3px black;
 }
 
@@ -53,7 +62,10 @@ hr {
 
 .post-title {
   font-size: 2rem;
+  font-family: cursive;
   word-wrap: break-word;
+  margin-top: 0;
+  border-bottom: 1px solid black;
 }
 
 .post-message {

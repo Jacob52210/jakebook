@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
-//import { faImage } from '@fortawesome/free-solid-svg-icons';      Use if no file is uploaded. Still gotta figure out code.
 import { deletePost, likePost } from '../../../actions/posts';
 import './post.css';
 
@@ -14,15 +13,15 @@ import './post.css';
 const Post = ({ post, setCurrentId }) => {
   const dispatch = useDispatch();
 
-  const bgimg = {
-    backgroundImage: `url( ${post.selectedFile} )`,
-    backgroundPosition: 'center center',
+  const bgImg = {
+    backgroundImage: `url(${post.selectedFile})`
   }
+
 
   return (
     <div className="post-container">
       
-      <div className="post-header" style={bgimg} >
+      <div className="post-header" style={bgImg === "" ? "No Image" : bgImg } >
         <div className="creater-age" >
           <h1 className="post-creator">{post.creator}</h1>
           <h1 className="post-age" >{moment(post.createdAt).fromNow()}</h1>
