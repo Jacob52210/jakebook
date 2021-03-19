@@ -1,7 +1,7 @@
 .post-container {
   width: 80vw;
   max-width: 280px;
-  height: 500px;
+  height: fit-content;
   margin-top: 2rem;
   box-shadow: 5px 5px 10px black;
   background-color: white;
@@ -9,27 +9,34 @@
 }
 
 .post-header {
-  height: 200px;
+  height: 150px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
-  display: flex;
   background-image: url(../../../images/bg-img.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   background-color: rgb(34, 34, 34);
   border-radius: 15px 15px 0 0;
- 
 }
 
+
+
 .post-body {
-  height: 60%;
+  height: fit-content;
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+img {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  border-radius: 15px 15px 0 0;
+  
 }
 
 .creater-age {
@@ -50,7 +57,6 @@
 
 .post-age {
   margin: 5px;
-  color: rgb(255, 255, 255);
 }
 
 hr {
@@ -91,7 +97,7 @@ hr {
 }
 
 .edit-btn {
-  margin: 25px;
+  margin: 1.5rem;
   color: white;
   cursor: pointer;
 }

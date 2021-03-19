@@ -4,10 +4,10 @@
 }
 
 .posts-container {
-  width: 100vw;
+  width: 95vw;
   margin: auto;
   margin-bottom: 2rem;
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr;
 }
 

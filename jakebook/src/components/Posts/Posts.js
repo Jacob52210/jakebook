@@ -15,7 +15,7 @@ const Posts = ({ setCurrentId }) => {
 
     posts.length === 0 ? <h1 className="NPY" >No Posts Yet</h1> : (
       <div className="posts-container">
-        {posts.map((post) => (
+        {posts.reverse().map((post) => (
           <div className="single-post" key={post._id} item>
             <Post post={post} setCurrentId={setCurrentId} />
           </div>
