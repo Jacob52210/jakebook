@@ -14,8 +14,9 @@ const Form = ({ currentId, setCurrentId}) => {
     message: '',
     tags: '',
     selectedFile: '',
-    createdAt: new Date()
-  })
+    
+  });
+
   const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
   const dispatch = useDispatch();
 
